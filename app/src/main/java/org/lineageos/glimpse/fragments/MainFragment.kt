@@ -75,6 +75,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     true
                 }
 
+                R.id.avifFragment -> {
+                    viewPager2.currentItem = 3
+                    true
+                }
+
                 else -> false
             }
         }
@@ -101,6 +106,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             },
             { AlbumsFragment() },
             { LibraryFragment() },
+            {
+                AlbumFragment().apply {
+                    arguments = AlbumFragment.createBundle(
+                        albumType = AlbumType.AVIF,
+                        hideToolbar = true,
+                    )
+                }
+            },
         )
     }
 }
