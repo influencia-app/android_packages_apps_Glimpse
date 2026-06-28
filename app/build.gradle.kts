@@ -84,7 +84,7 @@ dependencies {
 
     // AVIF decoder
     implementation("io.github.awxkee:avif-coder:2.2.1")
-    implementation("io.github.awxkee:avif-coder-glide:0.0.10")
+    implementation("io.github.awxkee:avif-coder-glide:2.2.1")
 }
 
 generateBp {
