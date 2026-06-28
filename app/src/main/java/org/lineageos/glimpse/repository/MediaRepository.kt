@@ -45,8 +45,8 @@ class MediaRepository(
     /**
      * AVIF data source singleton.
      */
-    private val avifScanner by lazy { AvifScanner(context) }
-    private val avifDataSource by lazy { AvifDataSource(avifScanner) }
+    private val _avifScanner by lazy { AvifScanner(context) }
+    private val avifDataSource by lazy { AvifDataSource(_avifScanner) }
 
     /**
      * @see MediaDataSource.isMediaItemCompatible
@@ -139,5 +139,5 @@ class MediaRepository(
     /**
      * AVIF scanner instance.
      */
-    fun getAvifScanner() = avifScanner
+    fun getAvifScanner() = _avifScanner
 }
