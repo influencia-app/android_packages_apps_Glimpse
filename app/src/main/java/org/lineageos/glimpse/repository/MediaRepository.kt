@@ -46,7 +46,7 @@ class MediaRepository(
      * AVIF data source singleton.
      */
     private val avifScanner by lazy { AvifScanner(context) }
-    private val avifDataSource by lazy { AvifDataSource(contentResolver, avifScanner) }
+    private val avifDataSource by lazy { AvifDataSource(avifScanner) }
 
     /**
      * @see MediaDataSource.isMediaItemCompatible
@@ -124,12 +124,12 @@ class MediaRepository(
     /**
      * AVIF-only reels.
      */
-    fun avifReels() = avifDataSource.reels()
+    fun avifReels() = avifDataSource.reels(null, null)
 
     /**
      * AVIF-only albums.
      */
-    fun avifAlbums() = avifDataSource.albums()
+    fun avifAlbums() = avifDataSource.albums(null, null)
 
     /**
      * AVIF album from a bucket URI.
