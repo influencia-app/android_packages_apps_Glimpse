@@ -6,6 +6,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.lineageos.generatebp)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -85,6 +86,7 @@ dependencies {
     // AVIF decoder
     implementation("io.github.awxkee:avif-coder:2.2.1")
     implementation("io.github.awxkee:avif-coder-glide:2.2.1")
+    ksp("com.github.bumptech.glide:ksp:5.0.5")
 }
 
 generateBp {
