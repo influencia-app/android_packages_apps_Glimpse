@@ -22,9 +22,9 @@ class AvifDatabaseHelper(context: Context) : SQLiteOpenHelper(context, "avif_db"
 
     override fun onConfigure(db: SQLiteDatabase) {
         super.onConfigure(db)
-        db.execSQL("PRAGMA journal_mode = WAL")
-        db.execSQL("PRAGMA synchronous = NORMAL")
-        db.execSQL("PRAGMA temp_store = MEMORY")
+        db.rawQuery("PRAGMA journal_mode = WAL", null).use { it.moveToFirst() }
+        db.rawQuery("PRAGMA synchronous = NORMAL", null).use { it.moveToFirst() }
+        db.rawQuery("PRAGMA temp_store = MEMORY", null).use { it.moveToFirst() }
     }
 }
 
