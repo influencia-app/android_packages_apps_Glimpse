@@ -208,9 +208,11 @@ class ThumbnailAdapter : ListAdapter<AlbumViewModel.AlbumContent, RecyclerView.V
         private const val BLUR_RADIUS = 15f
 
         @RequiresApi(Build.VERSION_CODES.S)
-        private val blurRenderEffect = RenderEffect.createBlurEffect(
-            BLUR_RADIUS, BLUR_RADIUS,
-            Shader.TileMode.MIRROR
-        )
+        private val blurRenderEffect by lazy {
+            RenderEffect.createBlurEffect(
+                BLUR_RADIUS, BLUR_RADIUS,
+                Shader.TileMode.MIRROR
+            )
+        }
     }
 }
