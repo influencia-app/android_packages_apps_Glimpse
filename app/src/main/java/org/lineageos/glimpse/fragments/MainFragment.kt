@@ -65,17 +65,17 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     true
                 }
 
-                R.id.albumsFragment -> {
+                R.id.avifFragment -> {
                     viewPager2.currentItem = 1
+                    true
+                }
+
+                R.id.albumsFragment -> {
+                    viewPager2.currentItem = 2
                     false
                 }
 
                 R.id.libraryFragment -> {
-                    viewPager2.currentItem = 2
-                    true
-                }
-
-                R.id.avifFragment -> {
                     viewPager2.currentItem = 3
                     true
                 }
@@ -104,8 +104,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     )
                 }
             },
-            { AlbumsFragment() },
-            { LibraryFragment() },
             {
                 AlbumFragment().apply {
                     arguments = AlbumFragment.createBundle(
@@ -114,6 +112,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     )
                 }
             },
+            { AlbumsFragment() },
+            { LibraryFragment() },
         )
     }
 }
