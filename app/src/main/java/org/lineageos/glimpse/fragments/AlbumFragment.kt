@@ -456,6 +456,8 @@ class AlbumFragment : Fragment(R.layout.fragment_album) {
 
                                 AlbumType.TRASH -> R.string.album_trash
 
+                                AlbumType.AVIF -> R.string.avif_title
+
                                 null -> null
                             }?.also { stringResId ->
                                 toolbar.setTitle(stringResId)

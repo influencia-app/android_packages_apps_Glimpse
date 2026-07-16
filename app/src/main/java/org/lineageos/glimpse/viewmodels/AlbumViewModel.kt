@@ -90,6 +90,8 @@ class AlbumViewModel(application: Application) : GlimpseViewModel(application) {
 
                 AlbumType.TRASH -> mediaRepository.trash().addAlbum(TRASH_ALBUM)
 
+                AlbumType.AVIF -> mediaRepository.avifReels().addAlbum(AVIF_ALBUM)
+
                 else -> albumRequest.albumUri?.let { albumUri ->
                     mediaRepository.album(albumUri)
                 } ?: flowOf(RequestStatus.Loading())
@@ -161,6 +163,7 @@ class AlbumViewModel(application: Application) : GlimpseViewModel(application) {
         private val REELS_ALBUM = dummyAlbum("Reels")
         private val FAVORITES_ALBUM = dummyAlbum("Favorites")
         private val TRASH_ALBUM = dummyAlbum("Trash")
+        private val AVIF_ALBUM = dummyAlbum("AVIF")
 
         private fun dummyAlbum(name: String) = Album(
             Uri.EMPTY,

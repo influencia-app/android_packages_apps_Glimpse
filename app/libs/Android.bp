@@ -231,7 +231,7 @@ java_import {
 
 java_import {
     name: "Glimpse_com.github.bumptech.glide_annotations",
-    jars: ["com/github/bumptech/glide/annotations/5.0.5/annotations-5.0.5.jar"],
+    jars: ["com/github/bumptech/glide/annotations/5.0.7/annotations-5.0.7.jar"],
     sdk_version: "36",
     min_sdk_version: "30",
     apex_available: [
@@ -244,7 +244,7 @@ java_import {
 
 android_library_import {
     name: "Glimpse_com.github.bumptech.glide_disklrucache",
-    aars: ["com/github/bumptech/glide/disklrucache/5.0.5/disklrucache-5.0.5.aar"],
+    aars: ["com/github/bumptech/glide/disklrucache/5.0.7/disklrucache-5.0.7.aar"],
     sdk_version: "36",
     min_sdk_version: "30",
     apex_available: [
@@ -257,7 +257,7 @@ android_library_import {
 
 android_library_import {
     name: "Glimpse_com.github.bumptech.glide_gifdecoder",
-    aars: ["com/github/bumptech/glide/gifdecoder/5.0.5/gifdecoder-5.0.5.aar"],
+    aars: ["com/github/bumptech/glide/gifdecoder/5.0.7/gifdecoder-5.0.7.aar"],
     sdk_version: "36",
     min_sdk_version: "30",
     apex_available: [
@@ -271,7 +271,7 @@ android_library_import {
 
 android_library_import {
     name: "Glimpse_com.github.bumptech.glide_glide",
-    aars: ["com/github/bumptech/glide/glide/5.0.5/glide-5.0.5.aar"],
+    aars: ["com/github/bumptech/glide/glide/5.0.7/glide-5.0.7.aar"],
     sdk_version: "36",
     min_sdk_version: "30",
     apex_available: [
@@ -391,6 +391,38 @@ java_import {
         "//apex_available:anyapex",
     ],
     static_libs: [
+        "kotlin-stdlib",
+    ],
+}
+
+android_library_import {
+    name: "Glimpse_io.github.awxkee_avif-coder",
+    aars: ["io/github/awxkee/avif-coder/2.2.1/avif-coder-2.2.1-release.aar"],
+    sdk_version: "36",
+    min_sdk_version: "30",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
+        "androidx.annotation_annotation",
+        "kotlin-stdlib",
+    ],
+    extract_jni: true,
+}
+
+android_library_import {
+    name: "Glimpse_io.github.awxkee_avif-coder-glide",
+    aars: ["io/github/awxkee/avif-coder-glide/2.2.1/avif-coder-glide-2.2.1-release.aar"],
+    sdk_version: "36",
+    min_sdk_version: "30",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
+        "Glimpse_com.github.bumptech.glide_glide",
+        "Glimpse_io.github.awxkee_avif-coder",
         "kotlin-stdlib",
     ],
 }

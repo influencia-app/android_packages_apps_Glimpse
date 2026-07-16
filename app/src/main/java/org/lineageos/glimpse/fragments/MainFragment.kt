@@ -65,13 +65,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     true
                 }
 
-                R.id.albumsFragment -> {
+                R.id.avifFragment -> {
                     viewPager2.currentItem = 1
+                    true
+                }
+
+                R.id.albumsFragment -> {
+                    viewPager2.currentItem = 2
                     false
                 }
 
                 R.id.libraryFragment -> {
-                    viewPager2.currentItem = 2
+                    viewPager2.currentItem = 3
                     true
                 }
 
@@ -95,6 +100,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 AlbumFragment().apply {
                     arguments = AlbumFragment.createBundle(
                         albumType = AlbumType.REELS,
+                        hideToolbar = true,
+                    )
+                }
+            },
+            {
+                AlbumFragment().apply {
+                    arguments = AlbumFragment.createBundle(
+                        albumType = AlbumType.AVIF,
                         hideToolbar = true,
                     )
                 }

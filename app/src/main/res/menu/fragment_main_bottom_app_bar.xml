@@ -12,6 +12,12 @@
         android:title="@string/reels_title" />
 
     <item
+        android:id="@+id/avifFragment"
+        style="@style/Theme.Glimpse.BottomAppBarOption"
+        android:icon="@drawable/ic_image"
+        android:title="@string/avif_title" />
+
+    <item
         android:id="@+id/albumsFragment"
         style="@style/Theme.Glimpse.BottomAppBarOption"
         android:icon="@drawable/ic_albums"

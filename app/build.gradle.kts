@@ -6,6 +6,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.lineageos.generatebp)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -18,6 +19,10 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+
+        ndk {
+            abiFilters += "arm64-v8a"
+        }
     }
 
     buildTypes {
@@ -77,6 +82,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.okhttp)
     implementation(libs.zoomimage.view.glide)
+
+    // AVIF decoder
+    implementation("io.github.awxkee:avif-coder:2.2.1")
+    implementation("io.github.awxkee:avif-coder-glide:2.2.1")
+    ksp("com.github.bumptech.glide:ksp:5.0.5")
 }
 
 generateBp {

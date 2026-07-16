@@ -17,5 +17,8 @@ class GlimpseApplication : Application() {
 
         // Observe dynamic colors changes
         DynamicColors.applyToActivitiesIfAvailable(this)
+
+        // Start AVIF scanner in background
+        mediaRepository.getAvifScanner().startScan { /* cache populated */ }
     }
 }

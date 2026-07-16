@@ -23,4 +23,9 @@ enum class AlbumType {
      * Trash album.
      */
     TRASH,
+
+    /**
+     * AVIF-only album.
+     */
+    AVIF,
 }
